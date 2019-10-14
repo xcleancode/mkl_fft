@@ -160,9 +160,11 @@ __create_descriptor_1d_@prec@_@domain@(MKL_LONG len, @sc_t@ fsc, @sc_t@ bsc)
             1,
             len
         );
+    /* call of DftiFreeDescriptor crashes
     if (!dftiCache.initialized) {
         atexit(freeCache);
     }
+    */
     dftiCache.initialized = (status == 0) ? 1 : 0;
 
   set_scales:
